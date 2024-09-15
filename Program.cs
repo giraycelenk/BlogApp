@@ -10,6 +10,8 @@ builder.Services.AddDbContext<BlogContext>(options =>{
 
 var app = builder.Build();
 
+SeedData.TestDataFill(app);
+
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
