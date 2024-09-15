@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp\\BlogApp.csproj": {}
+    "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp\\BlogApp.csproj": {
+    "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp\\BlogApp.csproj",
+        "projectUniqueName": "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp.csproj",
         "projectName": "BlogApp",
-        "projectPath": "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp\\BlogApp.csproj",
+        "projectPath": "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp.csproj",
         "packagesPath": "C:\\Users\\giray\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\BlogApp\\obj\\",
+        "outputPath": "C:\\Users\\giray\\Desktop\\Github\\BlogApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,11 +39,28 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
