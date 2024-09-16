@@ -25,48 +25,47 @@ namespace BlogApp.Data.Concrete.EfCore
                     );
                     context.SaveChanges();
                 }
-            }
+                
+                if(!context.Users.Any())
+                {
+                    context.Users.AddRange(
+                        new User { UserName = "giraycelenk" },
+                        new User { UserName = "testkullanici" }
+                    );
+                    context.SaveChanges();
+                }
 
-            if(!context.Users.Any())
-            {
-                context.Users.AddRange(
-                    new User { UserName = "giraycelenk" },
-                    new User { UserName = "testkullanici" }
-                );
-                context.SaveChanges();
-            }
-            
-            if(!context.Posts.Any())
-            {
-                context.Posts.AddRange(
-                    new Post { 
-                            Title = "ASP.NET Core",
-                            Content = "Asp.net core content",
-                            IsActive = true,
-                            PublishedOn = DateTime.Now,
-                            Tags = context.Tags.Take(3).ToList(),
-                            UserId = 1 
-                        },
+                if(!context.Posts.Any())
+                {
+                    context.Posts.AddRange(
                         new Post { 
-                            Title = "PHP",
-                            Content = "PHP content",
-                            IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-20),
-                            Tags = context.Tags.Take(2).ToList(),
-                            UserId = 1 
-                        },
-                        new Post { 
-                            Title = "Django",
-                            Content = "Django content",
-                            IsActive = true,
-                            PublishedOn = DateTime.Now.AddDays(-5),
-                            Tags = context.Tags.Take(4).ToList(),
-                            UserId = 2 
-                        }
-                );
-                context.SaveChanges();
+                                Title = "ASP.NET Core",
+                                Content = "Asp.net core content",
+                                IsActive = true,
+                                PublishedOn = DateTime.Now,
+                                Tags = context.Tags.Take(3).ToList(),
+                                UserId = 1 
+                            },
+                            new Post { 
+                                Title = "PHP",
+                                Content = "PHP content",
+                                IsActive = true,
+                                PublishedOn = DateTime.Now.AddDays(-20),
+                                Tags = context.Tags.Take(2).ToList(),
+                                UserId = 1 
+                            },
+                            new Post { 
+                                Title = "Django",
+                                Content = "Django content",
+                                IsActive = true,
+                                PublishedOn = DateTime.Now.AddDays(-5),
+                                Tags = context.Tags.Take(4).ToList(),
+                                UserId = 2 
+                            }
+                    );
+                    context.SaveChanges();
+                }
             }
-
         }
     }
 }

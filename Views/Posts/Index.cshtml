@@ -1,0 +1,14 @@
+@model List<Post>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts List</title>
+</head>
+<body>
+    @foreach(var post in Model)
+    {
+        <p>@post.Title</p>
+    }
+</body>
+</html>
