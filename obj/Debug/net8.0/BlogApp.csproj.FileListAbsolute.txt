@@ -247,3 +247,5 @@ C:\Users\giray\Desktop\Github\BlogApp\obj\Debug\net8.0\BlogApp.genruntimeconfig.
 C:\Users\giray\Desktop\Github\BlogApp\obj\Debug\net8.0\ref\BlogApp.dll
 C:\Users\giray\Desktop\Github\BlogApp\obj\Debug\net8.0\BlogApp.RazorAssemblyInfo.cache
 C:\Users\giray\Desktop\Github\BlogApp\obj\Debug\net8.0\BlogApp.RazorAssemblyInfo.cs
+C:\Users\giray\Desktop\Github\BlogApp\bin\Debug\net8.0\libman.json
+C:\Users\giray\Desktop\Github\BlogApp\bin\Debug\net8.0\BlogApp.staticwebassets.runtime.json

@@ -14,6 +14,8 @@ builder.Services.AddScoped<IPostRepository, EfPostRepository>();
 
 var app = builder.Build();
 
+app.UseStaticFiles();
+
 SeedData.TestDataFill(app);
 
 app.MapGet("/", () => "Hello World!");
