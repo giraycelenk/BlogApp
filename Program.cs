@@ -12,6 +12,8 @@ builder.Services.AddDbContext<BlogContext>(options =>{
 
 builder.Services.AddScoped<IPostRepository, EfPostRepository>();
 
+builder.Services.AddScoped<ITagRepository, EfTagRepository>();
+
 var app = builder.Build();
 
 app.UseStaticFiles();
