@@ -17,11 +17,11 @@ namespace BlogApp.Data.Concrete.EfCore
                 if(!context.Tags.Any())
                 {
                     context.Tags.AddRange(
-                        new Tag { Text = "Web Programlama", Url = "web-programlama" },
-                        new Tag { Text = "Backend" ,Url = "backend"},
-                        new Tag { Text = "Frontend" ,Url = "frontend"},
-                        new Tag { Text = "FullStack" ,Url = "fullstack"},
-                        new Tag { Text = "PHP" ,Url = "php"}
+                        new Tag { Text = "Web Programlama", Url = "web-programlama", Color=TagColors.info},
+                        new Tag { Text = "Backend" ,Url = "backend",Color=TagColors.primary},
+                        new Tag { Text = "Frontend" ,Url = "frontend",Color=TagColors.danger},
+                        new Tag { Text = "FullStack" ,Url = "fullstack",Color=TagColors.warning},
+                        new Tag { Text = "PHP" ,Url = "php",Color=TagColors.success}
                     );
                     context.SaveChanges();
                 }
