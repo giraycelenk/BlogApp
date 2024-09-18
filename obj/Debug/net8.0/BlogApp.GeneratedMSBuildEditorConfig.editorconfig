@@ -9,39 +9,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlogApp
 build_property.RootNamespace = BlogApp
-build_property.ProjectDir = C:\Users\giray\Desktop\Github\BlogApp\
+build_property.ProjectDir = c:\Users\giray\Desktop\Github\BlogApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\giray\Desktop\Github\BlogApp
+build_property.MSBuildProjectDirectory = c:\Users\giray\Desktop\Github\BlogApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/giray/Desktop/Github/BlogApp/Views/Posts/Details.cshtml]
+[c:/Users/giray/Desktop/Github/BlogApp/Views/Posts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giray/Desktop/Github/BlogApp/Views/Posts/Index.cshtml]
+[c:/Users/giray/Desktop/Github/BlogApp/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giray/Desktop/Github/BlogApp/Views/Shared/Components/NewPosts/Default.cshtml]
+[c:/Users/giray/Desktop/Github/BlogApp/Views/Shared/Components/NewPosts/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmV3UG9zdHNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giray/Desktop/Github/BlogApp/Views/Shared/Components/TagsMenu/Default.cshtml]
+[c:/Users/giray/Desktop/Github/BlogApp/Views/Shared/Components/TagsMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGFnc01lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giray/Desktop/Github/BlogApp/Views/Shared/_Layout.cshtml]
+[c:/Users/giray/Desktop/Github/BlogApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giray/Desktop/Github/BlogApp/Views/_ViewImports.cshtml]
+[c:/Users/giray/Desktop/Github/BlogApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/giray/Desktop/Github/BlogApp/Views/_ViewStart.cshtml]
+[c:/Users/giray/Desktop/Github/BlogApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

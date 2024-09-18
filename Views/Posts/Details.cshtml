@@ -11,9 +11,58 @@
                 }
             </div>  
             <img src="~/img/@Model.Image" class="img-fluid rounded" alt="">
-            <div>
-                @Model.Content
-            </div>
+            <div>@Model.Content</div>
+        </div>
+        <div class="bg-white mt-3">
+            <card class="card border-0">
+                <div class="card-header pb-0">
+                    @{
+                        if(@Model.Comments.Count() > 0)
+                        {
+                            <h4><span id="commentCount">@Model.Comments.Count() adet yorum</span></h4>
+                        }
+                        else
+                        {
+                            <h4>Henüz yorum yapılmamış.</h4>
+                        }
+                    }
+                </div>
+                <div class="card-body">
+                    <div id="comments">
+                        @foreach(var comment in Model.Comments)
+                        {
+                            <div class="my-4 d-flex">
+                                <img src="/img/@comment.User.Image" alt="" class="avatar rounded-circle float-start me-3">
+                                <div>
+                                    <div class="mb-2 d-flex">
+                                        <h6 class="me-2">@comment.User.UserName</h6>
+                                        <small>@comment.PublishedOn.ToString("G")</small>
+                                    </div>
+                                    <p>@comment.Text</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <hr class="my-4">
+                    <div>
+                        <h4 class="mb-3">Yorum Ekle</h4>
+                        <form action="/posts/AddComment" method="post">
+                            <input type="hidden" id="PostId" name="PostId" value="@Model.PostId">
+                            <div class="mb-3">
+                                <label for="UserName" class="form-label">UserName</label>
+                                <input type="text" name="UserName" id="UserName" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Text" class="form-label">Yorum</label>
+                                <textarea type="text" name="Text" id="Text" rows="3" class="form-control"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button id="btnYorumKayit" type="submit" class="btn btn-primary">Yorum Yap</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </card>
         </div>
     </div>
     <div class="col-lg-4">
@@ -21,4 +70,48 @@
         <vc:new-posts></vc:new-posts>
     </div>
 </div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#btnYorumKayit").click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("AddComment")',
+                    dataType: 'json',
+                    data: {
+                        PostId: $('#PostId').val(),
+                        UserName: $('#UserName').val(),
+                        Text: $('#Text').val(),
+                    },
+                    success:function(yorum){
+                        var date = new Date(yorum.publishedOn);
+                        $("#comments").append(`
+                            <div class="my-4 d-flex">
+                                <img src="/img/${yorum.image}" alt="" class="avatar rounded-circle float-start me-3">
+                                <div>
+                                    <div class="mb-2 d-flex">
+                                        <h6 class="me-2">${yorum.userName}</h6>
+                                        <small>${date.toLocaleDateString()}</small>
+                                    </div>
+                                    <p>${yorum.text}</p>
+                                </div>
+                            </div>
+                        `);
+
+                        $("#UserName").val('');
+                        $("#Text").val('');
+
+                        var adet = parseInt($("#commentCount").text());
+                        $("#commentCount").text(adet+1);
+                    }
+                    
+                });
+                return false;
+            });
+        });
+    </script>
+}
 
