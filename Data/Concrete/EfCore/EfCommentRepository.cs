@@ -15,7 +15,7 @@ namespace BlogApp.Data.Concrete
 
         public void CreateComment(Comment comment)
         {
-            _context.Add(comment);
+            _context.Comments.Add(comment);
             _context.SaveChanges();
         }
     }

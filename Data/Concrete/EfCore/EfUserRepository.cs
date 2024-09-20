@@ -15,7 +15,7 @@ namespace BlogApp.Data.Concrete
 
         public void CreateUser(User user)
         {
-            _context.Add(user);
+            _context.Users.Add(user);
             _context.SaveChanges();
         }
     }

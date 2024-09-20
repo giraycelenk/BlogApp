@@ -40,7 +40,8 @@ namespace BlogApp.Data.Concrete.EfCore
                     context.Posts.AddRange(
                         new Post { 
                                 Title = "ASP.NET Core",
-                                Content = "Asp.net core content",
+                                Description = "Asp.net core description",
+                                Content = "Asp.net core content", 
                                 Url = "aspnet-core",
                                 IsActive = true,
                                 PublishedOn = DateTime.Now,
@@ -54,6 +55,7 @@ namespace BlogApp.Data.Concrete.EfCore
                             },
                             new Post { 
                                 Title = "PHP",
+                                Description = "PHP description",
                                 Content = "PHP content",
                                 Url = "php",
                                 IsActive = true,
@@ -64,6 +66,7 @@ namespace BlogApp.Data.Concrete.EfCore
                             },
                             new Post { 
                                 Title = "Django",
+                                Description = "Django description",
                                 Content = "Django content",
                                 Url = "django",
                                 IsActive = true,
@@ -74,6 +77,7 @@ namespace BlogApp.Data.Concrete.EfCore
                             },
                             new Post { 
                                 Title = "React",
+                                Description = "React description",
                                 Content = "React content",
                                 Url = "react",
                                 IsActive = true,
@@ -84,6 +88,7 @@ namespace BlogApp.Data.Concrete.EfCore
                             },
                             new Post { 
                                 Title = "Angular",
+                                Description = "Angular description",
                                 Content = "Angular content",
                                 Url = "angular",
                                 IsActive = true,
@@ -95,6 +100,7 @@ namespace BlogApp.Data.Concrete.EfCore
                             ,
                             new Post { 
                                 Title = "Web Tasarım",
+                                Description = "Web Tasarım description",
                                 Content = "Web Tasarım content",
                                 Url = "web-tasarim",
                                 IsActive = true,

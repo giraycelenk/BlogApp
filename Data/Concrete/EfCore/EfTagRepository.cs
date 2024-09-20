@@ -15,7 +15,7 @@ namespace BlogApp.Data.Concrete
 
         public void CreateTag(Tag tag)
         {
-            _context.Add(tag);
+            _context.Tags.Add(tag);
             _context.SaveChanges();
         }
     }

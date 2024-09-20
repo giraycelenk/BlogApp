@@ -15,7 +15,7 @@ namespace BlogApp.Data.Concrete
 
         public void CreatePost(Post post)
         {
-            _context.Add(post);
+            _context.Posts.Add(post);
             _context.SaveChanges();
         }
     }
