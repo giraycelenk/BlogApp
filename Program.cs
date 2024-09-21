@@ -35,6 +35,18 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "post_details",
+    pattern:"posts/edit/{url}",
+    defaults:new{controller = "Posts", action="Edit"}
+);
+
+app.MapControllerRoute(
+    name: "post_details",
+    pattern:"posts/delete/{url}",
+    defaults:new{controller = "Posts", action="Delete"}
+);
+
+app.MapControllerRoute(
     name: "user_profile",
     pattern:"profile/{username}",
     defaults:new{controller = "Users", action="Profile"}

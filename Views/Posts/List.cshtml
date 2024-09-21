@@ -18,11 +18,11 @@
                 {
                     <tr>
                         <td><img src="/img/@item.Image" class="img-fluid" alt=""></td>
-                        <td>@item.Title</td>
+                        <td><a href="/posts/details/@item.Url">@item.Title</a></td>
                         <td>@item.IsActive</td>
                         <td>
-                            <a href="/posts/edit/@item.PostId" class="btn btn-sm btn-primary">Edit</a>
-                            <a href="/posts/delete/@item.PostId" class="btn btn-sm btn-danger" >Delete</a>
+                            <a href="/posts/edit/@item.Url" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/posts/delete/@item.Url" class="btn btn-sm btn-danger" >Delete</a>
                         </td>
                     </tr>
                 }
