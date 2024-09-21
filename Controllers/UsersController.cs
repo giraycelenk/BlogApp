@@ -102,6 +102,24 @@ namespace BlogApp.Controllers
             }
             return View(model);
         }
+        public async Task<IActionResult> Profile(string username)
+        {
+            if(string.IsNullOrEmpty(username))
+            {
+                return NotFound();
+            }
+            var user = await _userRepository
+                        .Users
+                        .Include(x => x.Posts)
+                        .Include(x => x.Comments)
+                        .ThenInclude(x => x.Post)
+                        .FirstOrDefaultAsync(x => x.UserName == username);
+            if(user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
         
     }
 }
