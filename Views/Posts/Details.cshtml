@@ -13,7 +13,14 @@
             <img src="~/img/@Model.Image" class="img-fluid rounded" alt="">
             <ul class="list-inline my-3">
                 <li class="list-inline-item"><i class="bi bi-calendar"></i> @Model.PublishedOn.ToString("G")</li>
-                <li class="list-inline-item"><i class="bi bi-person-circle"></i><a href="/profile/@Model.User.UserName">@Model.User.Name</a></li>
+                <li class="list-inline-item"><i class="bi bi-person-circle"></i><a href="/profile/@Model.User.UserName">  @Model.User.Name</a></li>
+                
+                @if(User.FindFirstValue(ClaimTypes.NameIdentifier) == @Model.User.UserId.ToString())
+                {
+                    <li class="list-inline-item">
+                        <a href="/posts/delete/@Model.PostId" class="btn btn-sm btn-danger">Gönderiyi Sil</a>
+                    </li>
+                }
             </ul>
             <hr class="py-3">
             <div>@Model.Content</div>

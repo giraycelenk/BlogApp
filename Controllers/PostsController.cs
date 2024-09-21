@@ -150,5 +150,45 @@ namespace BlogApp.Controllers
             }
             return View(model);
         }
+        public IActionResult Delete(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var post = _postRepository.Posts.FirstOrDefault(i => i.PostId == id);
+            if(post == null)
+            {
+                return NotFound();
+            }
+            return View(new PostDeleteViewModel{
+                PostId = post.PostId,
+                Title = post.Title,
+                Description = post.Description,
+                Content = post.Content,
+                Url = post.Url,
+                IsActive = post.IsActive,
+            });
+            
+        }
+        [Authorize]
+        [HttpPost]
+        public IActionResult Delete(PostDeleteViewModel model)
+        {
+            if(model == null)
+            {
+                return NotFound();
+            }
+
+            var post = _postRepository.Posts.FirstOrDefault(i => i.PostId == model.PostId);
+
+            if(post == null)
+            {
+                return NotFound();
+            }
+
+            _postRepository.DeletePost(post);
+            return RedirectToAction("List");
+        }
     }
 }
