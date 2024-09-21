@@ -9,5 +9,6 @@ namespace BlogApp.Data.Abstract
         void CreatePost(Post post);
         void EditPost(Post post);
         void DeletePost(Post post);
+        void EditPost(Post entityToUpdate, int[] tagIds);
     }
 }

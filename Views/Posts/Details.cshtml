@@ -24,6 +24,9 @@
                 @if(User.FindFirstValue(ClaimTypes.NameIdentifier) == @Model.User.UserId.ToString())
                 {
                     <li class="list-inline-item">
+                        <a href="/posts/edit/@Model.Url" class="btn btn-sm btn-primary">Düzenle</a>
+                    </li>
+                    <li class="list-inline-item">
                         <a href="/posts/delete/@Model.Url" class="btn btn-sm btn-danger">Gönderiyi Sil</a>
                     </li>
                 }
