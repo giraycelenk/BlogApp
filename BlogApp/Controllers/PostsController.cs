@@ -24,11 +24,12 @@ namespace BlogApp.Controllers
         {
             var posts = _postRepository.Posts.Where(i => i.IsActive == true);
             int skipPosts = (page_num-1)*5;
+            int totalPages = (int)Math.Ceiling((double)posts.Count() / 5);
             if(!string.IsNullOrEmpty(tag))
             {
                 posts = posts.Where(x => x.Tags.Any(t=>t.Url==tag));
             }
-            return View(new PostViewModel{Posts = await posts.OrderByDescending(p => p.PublishedOn).Skip(skipPosts).Take(5).ToListAsync(),TotalPostsCount=posts.Count()});
+            return View(new PostViewModel{Posts = await posts.OrderByDescending(p => p.PublishedOn).Skip(skipPosts).Take(5).ToListAsync(),TotalPagesCount=totalPages,PageNum=page_num});
         }
         public async Task<IActionResult> Details(string url)
         {

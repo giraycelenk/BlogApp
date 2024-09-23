@@ -20,14 +20,44 @@
                 <hr class="my-3">
             }
             <nav>
-                <ul class="pagination">
-                    @{
-                        int totalPages = (int)Math.Ceiling((double)Model.TotalPostsCount / 5);
-                    }
-                    @for (int i = 0; i < totalPages; i++)
+                <ul class="pagination justify-content-center">
+                    @if(1 < Model.PageNum)
                     {
                         <li class="page-item">
-                            <a href="/posts/page/@(i + 1)" class="page-link">@((i + 1).ToString())</a>
+                            <a class="page-link" href="/posts/page/@Convert.ToInt32(Model.PageNum-1)" tabindex="-1" aria-disabled="true">Geri</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a>
+                        </li>
+                    }
+                    @for (int i = 0; i < Model.TotalPagesCount; i++)
+                    {
+                        if(i+1 == Model.PageNum)
+                        {
+                            <li class="page-item">
+                                <b><a href="/posts/page/@(i + 1)" class="page-link link-danger">@((i + 1).ToString())</a></b>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item">
+                                <a href="/posts/page/@(i + 1)" class="page-link">@((i + 1).ToString())</a>
+                            </li>
+                        } 
+                    }
+                    @if(Model.TotalPagesCount > Model.PageNum)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="/posts/page/@Convert.ToInt32(Model.PageNum+1)">İleri</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">İleri</a>
                         </li>
                     }
                 </ul>
