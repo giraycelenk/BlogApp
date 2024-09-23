@@ -74,5 +74,8 @@ _[Ss]cripts
 *.ncrunchsolution
 *.dot[Cc]over
 *.db
+*.db-shm
+*.db-wal
 Migrations/
 img/
+lib/

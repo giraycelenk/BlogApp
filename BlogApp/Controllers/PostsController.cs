@@ -20,15 +20,15 @@ namespace BlogApp.Controllers
             _commentRepository = commentRepository;
             _tagRepository = tagRepository;
         }
-        public async Task<IActionResult> Index(string tag)
+        public async Task<IActionResult> Index(string tag,int page_num=1)
         {
-            var claims = User.Claims;
             var posts = _postRepository.Posts.Where(i => i.IsActive == true);
+            int skipPosts = (page_num-1)*5;
             if(!string.IsNullOrEmpty(tag))
             {
                 posts = posts.Where(x => x.Tags.Any(t=>t.Url==tag));
             }
-            return View(new PostViewModel{Posts = await posts.OrderByDescending(p => p.PublishedOn).ToListAsync()});
+            return View(new PostViewModel{Posts = await posts.OrderByDescending(p => p.PublishedOn).Skip(skipPosts).Take(5).ToListAsync(),TotalPostsCount=posts.Count()});
         }
         public async Task<IActionResult> Details(string url)
         {

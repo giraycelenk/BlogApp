@@ -59,6 +59,12 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "posts_pages",
+    pattern:"posts/page/{page_num}",
+    defaults:new{controller = "Posts", action="Index"}
+);
+
+app.MapControllerRoute(
     name: "default",
     pattern:"{controller=Home}/{action=Index}/{id?}"
 );
