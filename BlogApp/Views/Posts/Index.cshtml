@@ -21,10 +21,10 @@
             }
             <nav>
                 <ul class="pagination justify-content-center">
-                    @if(1 < Model.PageNum)
+                    @if(1 < ViewBag.pageNum)
                     {
                         <li class="page-item">
-                            <a class="page-link" href="/posts/page/@Convert.ToInt32(Model.PageNum-1)" tabindex="-1" aria-disabled="true">Geri</a>
+                            <a class="page-link" href="/posts/page/@Convert.ToInt32(ViewBag.pageNum-1)" tabindex="-1" aria-disabled="true">Geri</a>
                         </li>
                     }
                     else
@@ -33,9 +33,9 @@
                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a>
                         </li>
                     }
-                    @for (int i = 0; i < Model.TotalPagesCount; i++)
+                    @for (int i = 0; i < ViewBag.totalPagesCount; i++)
                     {
-                        if(i+1 == Model.PageNum)
+                        if(i+1 == ViewBag.pageNum)
                         {
                             <li class="page-item">
                                 <b><a href="/posts/page/@(i + 1)" class="page-link link-danger">@((i + 1).ToString())</a></b>
@@ -48,10 +48,10 @@
                             </li>
                         } 
                     }
-                    @if(Model.TotalPagesCount > Model.PageNum)
+                    @if(ViewBag.totalPagesCount > ViewBag.pageNum)
                     {
                         <li class="page-item">
-                            <a class="page-link" href="/posts/page/@Convert.ToInt32(Model.PageNum+1)">İleri</a>
+                            <a class="page-link" href="/posts/page/@Convert.ToInt32(ViewBag.pageNum+1)">İleri</a>
                         </li>
                     }
                     else
